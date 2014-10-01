@@ -3,20 +3,24 @@ ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
+gem 'bootstrap-sass', '2.3.2.0'
+
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
-	gem 'sqlite3','1.3.8'
+  gem 'sqlite3', '1.3.8'
 	gem 'rspec-rails', '2.13.1'
+  gem 'guard-rspec', '2.5.0'
 end
 
 group :test do
 	gem 'selenium-webdriver','2.35.1'
 	gem 'capybara', '2.1.0'
+  gem 'libnotify', '0.8.0'
 end
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '4.0.1'
+gem 'sass-rails', '4.0.2'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '2.1.1'
@@ -42,7 +46,7 @@ group :doc do
 end
 
 group :production do
-	gem 'pg', '0.15.1'
+  gem 'pg', '0.15.1'
 	gem 'rails_12factor','0.0.2'
 end
 # Use ActiveModel has_secure_password
