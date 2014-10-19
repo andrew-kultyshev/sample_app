@@ -18,29 +18,31 @@ describe "UserPages" do
     it { should have_title(full_title('Sign up')) }
   end
 
-  describe "страница входа" do
-    before { visit signup_page }
+=begin
+    describe "страница входа" do
+      before { visit signup_page }
 
-    let(:submit) { "Create my account" }
+      let(:submit) { "Create my account" }
 
-    describe "с неправильной информацией" do
-      it "пользователь не создан" do
-        expect { click_button submit }.not_to change(User, :count)
+      describe "с неправильной информацией" do
+        it "пользователь не создан" do
+          expect { click_button submit }.not_to change(User, :count)
+        end
+      end
+
+      describe "с правильной информацией" do
+        before do
+          fill_in "Name", with: "Example User"
+          fill_in "Email", with: "user@example.com"
+          fill_in "Password", with: "foobar"
+          fill_in "Confirmation", with: "foobar"
+        end
+
+        it "пользователь создан" do
+          expect { click_button submit }.to change(User, :count).by(1)
+        end
       end
     end
-
-    describe "с правильной информацией" do
-      before do
-        fill_in "Name", with: "Example User"
-        fill_in "Email", with: "user@example.com"
-        fill_in "Password", with: "foobar"
-        fill_in "Confirmation", with: "foobar"
-      end
-
-      it "пользователь создан" do
-        expect { click_button submit }.to change(User, :count).by(1)
-      end
-    end
-  end
+=end
 
 end
